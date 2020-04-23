@@ -16,6 +16,13 @@ alias push_bart_large='s3cmd put $LOCAL_BART_LARGE $S3_BART_LARGE'
 export S3_MNLI="s3://models.huggingface.co/bert/facebook/bart-large-mnli/config.json"
 export LOCAL_MNLI=$CFG_REPO/bart_large_mnli.json
 
+export S3_TINY="s3://models.huggingface.co/bert/sshleifer/bart-tiny-random/config.json"
+export LOCAL_TINY="bart_tiny_random.json"
+
+push_tiny () {
+  s3cmd put $LOCAL_TINY $S3_TINY
+
+}
 push_mbart () {
   s3cmd put $LOCAL_ENRO $S3_ENRO
   s3cmd put $LOCAL_ENRO $S3_CC
