@@ -39,3 +39,7 @@ pull_all () {
   s3cmd get $S3_BART_LARGE $LOCAL_BART_LARGE $@
   s3cmd get $S3_MNLI $LOCAL_MNLI $@
 }
+
+sync_helsinki_cfg () {
+    s3cmd put --recursive Helsinki-NLP/ s3://models.huggingface.co/bert/Helsinki-NLP/
+}
