@@ -4,6 +4,33 @@ import os
 import json
 
 import sys
+from pathlib import Path
+MIRROR_DIR = Path('/Users/shleifer/transformers-config-mirror/')
+from transformers import MarianConfig
+from durbango import tqdm_nice
+
+DEFAULT_UPDATE_DICT = {'max_length': 512}
+def bulk_update_local_configs(models, update_dict=DEFAULT_UPDATE_DICT,
+                              save_dir=MIRROR_DIR):
+    failures = []
+    for slug in tqdm_nice(models):
+        assert slug.startswith('opus-mt')
+        try:
+            cfg = MarianConfig.from_pretrained(f'Helsinki-NLP/{slug}')
+        except OSError:
+            failures.append(slug)
+            continue
+        for k,v in update_dict.items():
+            setattr(cfg, k, v)
+        # if a new value depends on a cfg value, add code here
+        # e.g. cfg.decoder_start_token_id = cfg.pad_token_id
+
+        dest_dir = (save_dir/'Helsinki-NLP'/ slug)
+        if not dest_dir.exists():
+            print(f'making {dest_dir}')
+            dest_dir.mkdir(exist_ok=True)
+        cfg.save_pretrained(dest_dir)
+        assert cfg.from_pretrained(dest_dir).model_type == 'marian'
 
 
 def update_config(model_identifier, updates):
