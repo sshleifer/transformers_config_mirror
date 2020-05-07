@@ -1,7 +1,3 @@
-from transformers.configuration_bart import BART_PRETRAINED_CONFIG_ARCHIVE_MAP
-
-
-
 from transformers.hf_api import HfApi
 
 import os
