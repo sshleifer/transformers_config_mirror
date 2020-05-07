@@ -1,4 +1,5 @@
 {
+  "_num_labels": 3,
   "activation_dropout": 0.0,
   "activation_function": "swish",
   "add_bias_logits": false,

@@ -1,4 +1,5 @@
 {
+  "_num_labels": 3,
   "activation_dropout": 0.0,
   "activation_function": "swish",
   "add_bias_logits": false,
@@ -9,7 +10,7 @@
   "attention_dropout": 0.0,
   "bad_words_ids": [
     [
-      61278
+      43543
     ]
   ],
   "bos_token_id": 0,
@@ -19,7 +20,7 @@
   "decoder_ffn_dim": 2048,
   "decoder_layerdrop": 0.0,
   "decoder_layers": 6,
-  "decoder_start_token_id": 61278,
+  "decoder_start_token_id": 43543,
   "dropout": 0.1,
   "encoder_attention_heads": 8,
   "encoder_ffn_dim": 2048,
@@ -45,8 +46,8 @@
   "normalize_embedding": false,
   "num_beams": 6,
   "num_hidden_layers": 6,
-  "pad_token_id": 61278,
+  "pad_token_id": 43543,
   "scale_embedding": true,
   "static_position_embeddings": true,
-  "vocab_size": 61279
+  "vocab_size": 43544
 }
