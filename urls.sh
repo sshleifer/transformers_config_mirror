@@ -43,3 +43,7 @@ pull_all () {
 sync_helsinki_cfg () {
     s3cmd put --recursive Helsinki-NLP/ s3://models.huggingface.co/bert/Helsinki-NLP/
 }
+pull_helsinki_cfg () {
+	# FIXME
+    s3cmd get --recursive Helsinki-NLP/ s3://models.huggingface.co/bert/Helsinki-NLP/
+}

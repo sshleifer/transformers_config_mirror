@@ -8,6 +8,11 @@
     "MarianMTModel"
   ],
   "attention_dropout": 0.0,
+  "bad_words_ids": [
+    [
+      54687
+    ]
+  ],
   "bos_token_id": 0,
   "classif_dropout": 0.0,
   "d_model": 512,
@@ -34,6 +39,7 @@
     "LABEL_1": 1,
     "LABEL_2": 2
   },
+  "max_length": 512,
   "max_position_embeddings": 512,
   "model_type": "marian",
   "normalize_before": false,
